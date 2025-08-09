@@ -4,7 +4,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'AutoExpo - The Future of Motion is Here',
+  title: 'AutoNXT - The Future of Motion is Here',
   description: 'Experience the pinnacle of automotive innovation and design. Join us for the most anticipated auto event of the year.',
 }
 

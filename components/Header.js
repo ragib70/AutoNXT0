@@ -16,7 +16,7 @@ const Header = ({ onRegisterClick }) => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
            <CarIcon className="w-8 h-8 text-blue-500"/>
-           <span className="text-2xl font-bold text-white">AutoExpo</span>
+           <span className="text-2xl font-bold text-white">AutoNXT</span>
         </div>
         
         {/* Desktop Navigation */}
