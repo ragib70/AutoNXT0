@@ -6,8 +6,8 @@ const GallerySection = () => {
         "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1542282088-fe84a45a4da8?q=80&w=2070&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1617531322474-6a8533a130a2?q=80&w=1964&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1704340142770-b52988e5b6eb?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1964&auto=format&fit=crop",
     ];
 
     return (
