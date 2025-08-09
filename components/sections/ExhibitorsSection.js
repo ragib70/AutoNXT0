@@ -3,8 +3,7 @@
 import Image from 'next/image';
 
 const ExhibitorsSection = () => {
-    const brands = ["Audi", "BMW", "Mercedes", "Tesla", "Porsche", "Ford", "Toyota", "Honda", "Hyundai", "Kia", "Jaguar", "Volvo"];
-    
+    const brands = ["Mahindra", "Maruti Suzuki", "Tata", "Tesla", "BYD", "Ford", "Toyota", "Honda", "Hyundai", "Kia", "Hero MotoCorp", "Volvo"];
     return (
         <section id="exhibitors" className="py-20 bg-gray-900">
             <div className="container mx-auto px-6 text-center">
@@ -16,7 +15,7 @@ const ExhibitorsSection = () => {
                             <img 
                                 src={`https://logo.clearbit.com/${brand.toLowerCase().replace(' ', '')}.com`} 
                                 alt={`${brand} Logo`}
-                                className="max-h-12 w-auto filter grayscale brightness-200 contrast-0 transition-all duration-300 hover:filter-none"
+                                className="max-h-12 w-auto"
                                 onError={(e) => { e.target.onerror = null; e.target.src=`https://placehold.co/120x40/1F2937/FFFFFF?text=${brand}&font=lato`; }}
                             />
                         </div>
