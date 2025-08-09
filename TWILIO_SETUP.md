@@ -38,9 +38,6 @@ TWILIO_AUTH_TOKEN=your_auth_token_here
 
 # Replace with your actual phone number (for SMS)
 TWILIO_PHONE_NUMBER=+1234567890
-
-# Your app URL
-NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
 ## 📱 Testing the System
