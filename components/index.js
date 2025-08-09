@@ -12,4 +12,4 @@ export { default as GallerySection } from './sections/GallerySection';
 export { default as RegistrationModal } from './modals/RegistrationModal';
 
 // Icons
-export { CarIcon, MapPinIcon, CalendarIcon, XIcon } from './icons/index';
+export { CarIcon, MapPinIcon, CalendarIcon, XIcon, CheckCircleIcon } from './icons/index';

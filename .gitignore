@@ -16,6 +16,9 @@ build/
 .env.test.local
 .env.production.local
 
+# Twilio credentials (keep these secure!)
+.env.*.local
+
 # IDE and editor files
 .vscode/
 .idea/

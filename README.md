@@ -8,17 +8,22 @@ A modern, responsive auto expo website built with Next.js, Tailwind CSS, and Luc
 - 📱 Fully responsive design
 - 🎨 Sleek dark theme with gradient accents
 - ✨ Smooth animations and hover effects
-- 📝 Registration modal with form handling
+- 📝 Registration modal with backend integration
+- 💬 **WhatsApp/SMS notifications** for registration confirmations
 - 🎥 Hero video background
 - 📸 Interactive image gallery
 - 📅 Event schedule timeline
 - 🏢 Featured exhibitors section
+- 🆔 Unique booking ID generation
 
 ## Project Structure
 
 ```
 AutoNXT0/
 ├── app/
+│   ├── api/
+│   │   └── register/
+│   │       └── route.js        # Registration API endpoint
 │   ├── globals.css
 │   ├── layout.js
 │   └── page.js
@@ -26,7 +31,7 @@ AutoNXT0/
 │   ├── icons/
 │   │   └── index.js
 │   ├── modals/
-│   │   └── RegistrationModal.js
+│   │   └── RegistrationModal.js # Updated with API integration
 │   ├── sections/
 │   │   ├── HeroSection.js
 │   │   ├── ExhibitorsSection.js
@@ -34,10 +39,12 @@ AutoNXT0/
 │   │   └── GallerySection.js
 │   ├── Header.js
 │   └── Footer.js
-├── package.json
+├── .env.local                  # Environment variables
+├── package.json               # Updated with Twilio
 ├── next.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
+├── TWILIO_SETUP.md           # Backend setup guide
 └── README.md
 ```
 
@@ -55,13 +62,25 @@ AutoNXT0/
    npm install
    ```
 
-2. **Run the development server:**
+2. **Set up environment variables:**
+   ```bash
+   cp .env.local.example .env.local
+   # Edit .env.local with your Twilio credentials
+   # See TWILIO_SETUP.md for detailed instructions
+   ```
+
+3. **Run the development server:**
    ```bash
    npm run dev
    ```
 
-3. **Open your browser:**
+4. **Open your browser:**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+5. **Test registration:**
+   - Click "Register" button
+   - Fill out the form with your phone number
+   - Check your WhatsApp/SMS for confirmation message
 
 ### Build for Production
 
@@ -76,6 +95,7 @@ npm start
 - **React 18** - UI library
 - **Tailwind CSS** - Utility-first CSS framework
 - **Lucide React** - Beautiful SVG icons
+- **Twilio** - WhatsApp and SMS API integration
 - **Inter Font** - Google Fonts integration
 
 ## Components Overview
@@ -112,13 +132,36 @@ The site uses a blue and gray color scheme. Main colors:
 - Hover effects using Tailwind transitions
 - Smooth scroll behavior
 
+## Backend Features
+
+### Registration API (`/api/register`)
+- **Unique Booking ID generation** (format: ANX-XXXXX-XXXXX)
+- **Phone number formatting** (automatic country code detection)
+- **WhatsApp-first messaging** with SMS fallback
+- **Comprehensive error handling**
+- **Request validation**
+
+### Notification System
+- **WhatsApp Integration:** Uses Twilio WhatsApp API
+- **SMS Fallback:** Automatic fallback if WhatsApp fails
+- **Custom Message Template:** Personalized confirmation messages
+- **Delivery Tracking:** Message delivery status logging
+
+### Message Format
+```
+Welcome to AutoNXT, [Customer Name]! You're all set for this Monday, Aug 11. 
+Your Booking ID: [Booking ID]. Get ready for an amazing expo!
+```
+
 ## Form Handling
 
-The registration modal currently logs form data to console. To integrate with a backend:
+The registration modal now integrates with the backend:
 
-1. Replace the `handleSubmit` function in `RegistrationModal.js`
-2. Add your API endpoint or service (e.g., Supabase, Firebase)
-3. Implement proper error handling and success messages
+1. **Form Validation:** Client-side and server-side validation
+2. **Loading States:** Visual feedback during submission
+3. **Error Handling:** Detailed error messages for failed registrations
+4. **Success Confirmation:** Shows booking details and message delivery status
+5. **Phone Number Support:** Accepts various formats (+91XXXXXXXXXX, 91XXXXXXXXXX, XXXXXXXXXX)
 
 ## Image Optimization
 
