@@ -10,14 +10,24 @@ const ScheduleSection = () => {
     return (
         <section id="schedule" className="py-20 bg-black">
             <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold text-white mb-12 text-center">Event Schedule</h2>
-                <div className="relative border-l-2 border-gray-700 ml-6 md:ml-0 md:border-l-0 md:border-t-2 md:w-3/4 md:mx-auto">
+                <h2 className="text-4xl font-bold text-white mb-20 text-center">Event Schedule</h2>
+                <div className="relative">
+                    {/* The timeline line */}
+                    <div className="absolute h-full w-0.5 bg-gray-700 top-0 left-6 md:left-1/2 md:-translate-x-px"></div>
+
                     {events.map((event, index) => (
-                        <div key={event.day} className={`mb-12 md:mb-0 relative md:flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                            <div className="absolute -left-8 md:left-1/2 md:-top-8 md:-translate-x-1/2 bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center font-bold text-white border-4 border-black whitespace-nowrap">
+                        <div key={event.day} className="relative mb-16">
+                            {/* The circle on the timeline */}
+                            <div className="absolute bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center font-bold text-white border-4 border-black z-10 top-0 left-6 -translate-x-1/2 md:left-1/2 whitespace-nowrap">
                                 {event.date}
                             </div>
-                            <div className="pl-10 md:pl-0 md:w-1/2 md:px-10 md:pt-10">
+
+                            {/* The content card */}
+                            <div className={`
+                                w-full pl-20 pt-1
+                                md:w-1/2 
+                                ${index % 2 === 0 ? 'md:pl-0 md:pr-12 md:text-right' : 'md:ml-auto md:pl-12 md:text-left'}
+                            `}>
                                 <h3 className="text-2xl font-bold text-blue-400 mb-2">{event.day}: <span className="text-white">{event.title}</span></h3>
                                 <p className="text-gray-400 mb-2">{event.description}</p>
                                 <p className="text-sm text-gray-500 font-mono">{event.time}</p>
