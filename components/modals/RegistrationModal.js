@@ -72,14 +72,29 @@ const RegistrationModal = ({ isOpen, onClose }) => {
             <div className="bg-gray-800 rounded-lg p-4 text-left space-y-2 border border-gray-700 mb-4">
                 <p className="text-sm text-gray-400">Booking ID:</p>
                 <p className="font-mono text-lg text-blue-400">{registrationResult.bookingId}</p>
-                <p className="text-sm text-gray-400 pt-2">Notification sent via:</p>
-                <p className="font-medium text-green-400">{registrationResult.messageType}</p>
+                <p className="text-sm text-gray-400 pt-2">Notification status:</p>
+                <p className="font-medium text-green-400">
+                  {registrationResult.messageType === 'Failed (will contact manually)' 
+                    ? 'Registration confirmed - We\'ll contact you soon!' 
+                    : `Sent via ${registrationResult.messageType}`
+                  }
+                </p>
                 <p className="text-sm text-gray-400 pt-2">Phone:</p>
                 <p className="font-medium text-white">{registrationResult.data.phone}</p>
             </div>
             <div className="bg-gray-800/50 rounded-lg p-3 mb-6">
-              <p className="text-xs text-gray-500 mb-1">Message sent:</p>
-              <p className="text-sm text-gray-300 italic">"Welcome to AutoNXT, {registrationResult.data.name}! You're all set for this Monday, Aug 11. Your Booking ID: {registrationResult.bookingId}. Get ready for an amazing expo!"</p>
+              <p className="text-xs text-gray-500 mb-1">
+                {registrationResult.messageType === 'Failed (will contact manually)' 
+                  ? 'Confirmation message:' 
+                  : 'Message sent:'
+                }
+              </p>
+              <p className="text-sm text-gray-300 italic">
+                {registrationResult.messageType === 'Failed (will contact manually)' 
+                  ? `"Thank you for registering! Your booking ID is ${registrationResult.bookingId}. We'll send you event details shortly via email or phone."` 
+                  : `"Welcome to AutoNXT, ${registrationResult.data.name}! You're all set for this Monday, Aug 11. Your Booking ID: ${registrationResult.bookingId}. Get ready for an amazing expo!"`
+                }
+              </p>
             </div>
             <button 
               onClick={handleClose} 

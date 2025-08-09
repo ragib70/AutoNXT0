@@ -5,7 +5,6 @@ import twilio from 'twilio';
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
-const twilioWhatsAppNumber = process.env.TWILIO_WHATSAPP_NUMBER;
 
 const client = twilio(accountSid, authToken);
 
@@ -57,33 +56,24 @@ export async function POST(request) {
     // Create the message
     const message = `Welcome to AutoNXT, ${name}! You're all set for this Monday, Aug 11. Your Booking ID: ${bookingId}. Get ready for an amazing expo!`;
 
-    // Try to send WhatsApp message first, fallback to SMS
-    let messageResult;
-    let messageType;
+    // Always continue with registration even if messaging fails
+    let messageResult = null;
+    let messageType = 'N/A';
+    let messagingSuccess = false;
 
     try {
-      // Attempt WhatsApp message
       messageResult = await client.messages.create({
         body: message,
-        from: twilioWhatsAppNumber,
-        to: `whatsapp:${formattedPhone}`
+        from: twilioPhoneNumber,
+        to: formattedPhone
       });
-      messageType = 'WhatsApp';
-    } catch (whatsappError) {
-      console.log('WhatsApp failed, trying SMS:', whatsappError.message);
-      
-      // Fallback to SMS
-      try {
-        messageResult = await client.messages.create({
-          body: message,
-          from: twilioPhoneNumber,
-          to: formattedPhone
-        });
-        messageType = 'SMS';
-      } catch (smsError) {
-        console.error('Both WhatsApp and SMS failed:', smsError.message);
-        throw new Error('Failed to send notification');
-      }
+      messageType = 'SMS';
+      messagingSuccess = true;
+    } catch (smsError) {
+      console.error('SMS failed:', smsError.message);
+      // Don't throw error - continue with registration
+      messageType = 'Failed (will contact manually)';
+      messagingSuccess = false;
     }
 
     // Log the registration (in production, save to database)
@@ -94,8 +84,9 @@ export async function POST(request) {
       phone: formattedPhone,
       visitorType,
       registrationTime: new Date().toISOString(),
-      messageId: messageResult.sid,
-      messageType
+      messageId: messageResult ? messageResult.sid : null,
+      messageType,
+      messagingSuccess
     };
 
     console.log('Registration successful:', registrationData);

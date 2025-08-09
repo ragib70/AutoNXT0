@@ -9,7 +9,7 @@ A modern, responsive auto expo website built with Next.js, Tailwind CSS, and Luc
 - 🎨 Sleek dark theme with gradient accents
 - ✨ Smooth animations and hover effects
 - 📝 Registration modal with backend integration
-- 💬 **WhatsApp/SMS notifications** for registration confirmations
+- 💬 **SMS notifications** for registration confirmations
 - 🎥 Hero video background
 - 📸 Interactive image gallery
 - 📅 Event schedule timeline
@@ -80,7 +80,7 @@ AutoNXT0/
 5. **Test registration:**
    - Click "Register" button
    - Fill out the form with your phone number
-   - Check your WhatsApp/SMS for confirmation message
+   - Check your SMS for confirmation message
 
 ### Build for Production
 
@@ -95,7 +95,7 @@ npm start
 - **React 18** - UI library
 - **Tailwind CSS** - Utility-first CSS framework
 - **Lucide React** - Beautiful SVG icons
-- **Twilio** - WhatsApp and SMS API integration
+- **Twilio** - SMS API integration
 - **Inter Font** - Google Fonts integration
 
 ## Components Overview
@@ -137,13 +137,10 @@ The site uses a blue and gray color scheme. Main colors:
 ### Registration API (`/api/register`)
 - **Unique Booking ID generation** (format: ANX-XXXXX-XXXXX)
 - **Phone number formatting** (automatic country code detection)
-- **WhatsApp-first messaging** with SMS fallback
 - **Comprehensive error handling**
 - **Request validation**
 
 ### Notification System
-- **WhatsApp Integration:** Uses Twilio WhatsApp API
-- **SMS Fallback:** Automatic fallback if WhatsApp fails
 - **Custom Message Template:** Personalized confirmation messages
 - **Delivery Tracking:** Message delivery status logging
 
