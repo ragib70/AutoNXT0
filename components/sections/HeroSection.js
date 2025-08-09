@@ -6,7 +6,7 @@ const HeroSection = ({ onRegisterClick }) => (
   <section id="home" className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
     <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
     <video autoPlay loop muted playsInline className="absolute z-0 w-auto min-w-full min-h-full max-w-none">
-        <source src="https://cdn.pixabay.com/video/2024/02/13/198855-911801833_large.mp4" type="video/mp4" />
+        <source src="https://cdn.pixabay.com/video/2024/02/12/200276-912384794_large.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     <div className="relative z-20 px-4 animate-fade-in-up">
