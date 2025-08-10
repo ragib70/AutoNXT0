@@ -19,11 +19,11 @@ const HeroSection = ({ onRegisterClick }) => (
       <div className="flex items-center justify-center space-x-4">
           <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <CalendarIcon className="w-5 h-5 text-blue-400"/>
-              <span className="font-semibold">August 11, 2025</span>
+              <span className="font-semibold">August 11 - 13, 2025</span>
           </div>
            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <MapPinIcon className="w-5 h-5 text-blue-400"/>
-              <span className="font-semibold">Christ University</span>
+              <span className="font-semibold">Christ University, Kengeri Campus</span>
           </div>
       </div>
        <button onClick={onRegisterClick} className="mt-12 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all transform hover:scale-105 shadow-2xl shadow-blue-500/30">
