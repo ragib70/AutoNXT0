@@ -61,7 +61,7 @@ TWILIO_PHONE_NUMBER=+1234567890
 
 3. **User receives message:**
    ```
-   Welcome to AutoNXT, John Doe! You're all set for this Monday, Aug 11. 
+   Welcome to AutoNXT, John Doe! You're all set for the event, Aug 18 -20. 
    Your Booking ID: ANX-ABC123. Get ready for an amazing expo!
    ```
 

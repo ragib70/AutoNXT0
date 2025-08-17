@@ -146,7 +146,7 @@ The site uses a blue and gray color scheme. Main colors:
 
 ### Message Format
 ```
-Welcome to AutoNXT, [Customer Name]! You're all set for this Monday, Aug 11. 
+Welcome to AutoNXT, [Customer Name]! You're all set for the event, Aug 18 - 20. 
 Your Booking ID: [Booking ID]. Get ready for an amazing expo!
 ```
 

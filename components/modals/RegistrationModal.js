@@ -92,7 +92,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
               <p className="text-sm text-gray-300 italic">
                 {registrationResult.messageType === 'Failed (will contact manually)' 
                   ? `"Thank you for registering! Your booking ID is ${registrationResult.bookingId}. We'll send you event details shortly via email or phone."` 
-                  : `"Welcome to AutoNXT, ${registrationResult.data.name}! You're all set for this Monday, Aug 11. Your Booking ID: ${registrationResult.bookingId}. Get ready for an amazing expo!"`
+                  : `"Welcome to AutoNXT, ${registrationResult.data.name}! You're all set for the event, Aug 18 -20. Your Booking ID: ${registrationResult.bookingId}. Get ready for an amazing expo!"`
                 }
               </p>
             </div>
