@@ -19,7 +19,7 @@ const HeroSection = ({ onRegisterClick }) => (
       <div className="flex items-center justify-center space-x-4">
           <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <CalendarIcon className="w-5 h-5 text-blue-400"/>
-              <span className="font-semibold">August 11 - 13, 2025</span>
+              <span className="font-semibold">August 18 - 20, 2025</span>
           </div>
            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <MapPinIcon className="w-5 h-5 text-blue-400"/>
