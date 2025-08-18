@@ -54,7 +54,7 @@ export async function POST(request) {
     const formattedPhone = formatPhoneNumber(phone);
     
     // Create the message
-    const message = `Welcome to AutoNXT, ${name}! You're all set for the event, Aug 18 -20. Your Booking ID: ${bookingId}. Get ready for an amazing expo!`;
+    const message = `Welcome to AutoNXT, ${name}! You're all set for the event, Nov 28 - 30. Your Booking ID: ${bookingId}. Get ready for an amazing expo!`;
 
     // Always continue with registration even if messaging fails
     let messageResult = null;

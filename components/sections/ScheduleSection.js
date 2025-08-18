@@ -2,9 +2,9 @@
 
 const ScheduleSection = () => {
     const events = [
-        { day: 'Day 1', date: 'Aug 18', title: 'Industry & Press Day', description: 'Exclusive previews, product launches, and keynote speeches from industry pioneers.', time: '9:00 AM - 5:00 PM' },
-        { day: 'Day 2', date: 'Aug 19', title: 'Public Opening & EV Showcase', description: 'Doors open to the public. Special focus on the latest in electric vehicle technology and test drives.', time: '9:00 AM - 5:00 PM' },
-        { day: 'Day 3', date: 'Aug 20', title: 'Classic Cars & Family Day', description: 'A celebration of automotive history with a stunning display of classic cars. Fun activities for all ages.', time: '9:00 AM - 5:00 PM' },
+        { day: 'Day 1', date: 'Nov 28', title: 'Industry & Press Day', description: 'Exclusive previews, product launches, and keynote speeches from industry pioneers.', time: '9:00 AM - 5:00 PM' },
+        { day: 'Day 2', date: 'Nov 29', title: 'Public Opening & EV Showcase', description: 'Doors open to the public. Special focus on the latest in electric vehicle technology and test drives.', time: '9:00 AM - 5:00 PM' },
+        { day: 'Day 3', date: 'Nov 30', title: 'Classic Cars & Family Day', description: 'A celebration of automotive history with a stunning display of classic cars. Fun activities for all ages.', time: '9:00 AM - 5:00 PM' },
     ];
 
     return (
